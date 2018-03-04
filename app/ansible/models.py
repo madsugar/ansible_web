@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import json
+import json, os
 from collections import namedtuple
 from ansible.parsing.dataloader import DataLoader
 from ansible.vars.manager import VariableManager
@@ -59,7 +59,8 @@ class AnsibleRunner:
         results_callback = ResultCallback()
 
         # create inventory and pass to var manager
-        inventory = InventoryManager(loader=loader, sources=['./hosts'])
+        basedir = os.path.abspath(os.path.dirname(__file__))
+        inventory = InventoryManager(loader=loader, sources=['{}/hosts'.format(basedir)])
         variable_manager = VariableManager(loader=loader, inventory=inventory)
 
         # create play with tasks
