@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="ssh://root@192.168.1.30:22/root/test/venv/venv301/bin/python" name="ssh://root@192.168.1.30:22/root/test/venv/venv301/bin/python">
-        <fileTransfer host="192.168.1.30" port="22" accessType="SFTP">
+      <webServer id="ssh://root@192.168.1.30:22/root/test/venv/venv301/bin/python" name="ssh://root@192.168.1.30:22/root/test/venv/venv301/bin/python" url="http://192.168.1.30">
+        <fileTransfer host="192.168.1.30" port="22" rootFolder="/root" accessType="SFTP">
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
