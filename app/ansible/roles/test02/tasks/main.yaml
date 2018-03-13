@@ -1,0 +1,4 @@
+---
+  - name: Stop firewalld
+    service: name=rsyncd state=stopped enabled=no
+...

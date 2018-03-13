@@ -28,6 +28,7 @@ class AnsibleRunnerApi(Resource):
         module_name = request.form['module_name']
         module_args = request.form['module_args']
         print(hosts, username, passwd, module_name, module_args)
+        # a=AnsibleRunner(remote_user='root',conn_pass='123456')
         a = AnsibleRunner(remote_user=username, conn_pass=passwd, group=hosts, module_name=module_name,
                           module_args=module_args)
         res = a.order_run()
